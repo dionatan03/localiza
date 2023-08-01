@@ -225,7 +225,7 @@ footer {
     color: #7DDE21;
     padding: 10px;
     text-align: center;
-    position: fixed;
+    position: absolut;
     bottom: 30px;
     left: 0;
     width: 100%;
