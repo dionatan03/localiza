@@ -1,0 +1,177 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #F2F2F2;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn-tab {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-tab:focus {
+    outline: none;
+}
+
+.tab-pane {
+    display: none;
+}
+
+/* Estilo para a aba ativa */
+.tab-pane.active {
+    display: block;
+}
+
+.tab-buttons button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.tab-buttons button:hover {
+    background-color: #ddd;
+}
+
+.tab-buttons button:focus {
+    outline: none;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content:not(.hidden) {
+    display: block;
+}
+
+header {
+    background-color: #05662B;
+    color: #7DDE21;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+h1 {
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+main {
+    flex: 1;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #01604C;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.input-group {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #0077A6;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0077A6;
+}
+
+.timer-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.timer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.start-stop-button {
+    background-color: #4CAF50;
+}
+
+.start-stop-button.running {
+    background-color: #FF0000;
+}
+
+.log-box-container {
+    max-height: 100px;
+    overflow-y: auto;
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#log_content {
+    overflow-y: auto;
+    width: 100%;
+}
+
+.btn1 {
+    background-color: #004521;
+}
+
+.btn2 {
+    background-color: #00586F;
+}
+
+.btn3 {
+    background-color: #FC8422;
+}
+
+.btn4 {
+    background-color: #5AD893;
+}
+
+.time-start {
+    color: #004521;
+    font-weight: 700;
+    font-size: 20px;
+}
