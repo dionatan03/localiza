@@ -161,19 +161,19 @@ document.getElementById('glass_cleaning_button_d').addEventListener('click', () 
 
 updateTimesDisplay();
 
-const tabButtons = document.querySelectorAll('.btn-tab');
-const tabPanes = document.querySelectorAll('.tab-pane');
+//carrossel
 
-function showTab(tabId) {
-    tabPanes.forEach((tab) => {
-        tab.classList.remove('active');
-    });
-    document.getElementById(tabId).classList.add('active');
+function changeTab(index) {
+    const carouselSlides = document.getElementsByClassName("carousel-slide");
+    const tabPanes = document.getElementsByClassName("tab-pane");
+
+    for (var i = 0; i < carouselSlides.length; i++) {
+        carouselSlides[i].style.display = "none";
+        tabPanes[i].classList.remove("active");
+    }
+
+    carouselSlides[index].style.display = "block";
+    tabPanes[index].classList.add("active");
 }
 
-tabButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        const tabId = button.getAttribute('data-tab');
-        showTab(tabId);
-    });
-});
+changeTab(0);
