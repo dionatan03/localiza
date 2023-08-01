@@ -60,42 +60,52 @@ header {
     background-color: #05662B;
     color: #7DDE21;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 .logo {
-    width: 150px;
+    width: 100px;
 }
 
 h1 {
     margin: 0;
-    margin-top: 10px;
+    margin-top: 5px;
     font-family: 'Barlow Condensed', sans-serif;
 }
 
 main {
     flex: 1;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #01604C;
     font-family: 'Barlow Condensed', sans-serif;
 }
 
-.input-group {
+.tab-pane .input-group {
     display: flex;
-    padding: 10px;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+.green-button {
+    margin-right: 10px;
+    background-color: green;
+}
+
+.red-button {
+    background-color: red;
 }
 
 input[type="text"] {
@@ -111,10 +121,6 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
-}
-
-button:hover {
-    background-color: #0077A6;
 }
 
 .timer-group {
@@ -154,24 +160,77 @@ button:hover {
     width: 100%;
 }
 
-.btn1 {
-    background-color: #004521;
-}
-
-.btn2 {
-    background-color: #00586F;
-}
-
-.btn3 {
-    background-color: #FC8422;
-}
-
-.btn4 {
-    background-color: #5AD893;
+.btn {
+    background-color: transparent;
 }
 
 .time-start {
     color: #004521;
     font-weight: 700;
     font-size: 20px;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    transition: transform 0.3s;
+}
+
+.carousel-slide img {
+    width: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    pointer-events: none;
+}
+
+.carousel-controls .carousel-control {
+    font-size: 32px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carousel-controls .carousel-control.prev {
+    margin-left: 10px;
+}
+
+.carousel-controls .carousel-control.next {
+    margin-right: 10px;
+}
+
+.transitioning {
+    transition: transform 0.3s ease;
+}
+
+footer {
+    background-color: #05662B;
+    color: #7DDE21;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+}
+
+.footer-content {
+    font-size: 14px;
 }
