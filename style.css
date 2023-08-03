@@ -7,6 +7,39 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.select-sec {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#btnIniciar {
+    padding: 20px 40px;
+    /* Ajuste o tamanho do botão conforme necessário */
+    font-size: 18px;
+    /* Ajuste o tamanho da fonte conforme necessário */
+    background-color: #05662B;
+    color: #7DDE21;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 200px;
+    width: 200px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+#btnIniciar:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
 .tab-buttons {
     display: flex;
     justify-content: center;
@@ -61,6 +94,7 @@ header {
     color: #7DDE21;
     text-align: center;
     padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
 }
 
 .logo {
@@ -220,8 +254,23 @@ button {
     transition: transform 0.3s ease;
 }
 
+.main-container {
+    flex: 1;
+    width: 100%;
+    max-width: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    place-content: center center;
+}
+
+#btnFinalizar {
+    background-color: #FF0000;
+}
+
 footer {
     background-color: #05662B;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.7);
     color: #7DDE21;
     text-align: center;
     position: absolut;
