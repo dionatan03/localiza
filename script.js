@@ -166,14 +166,54 @@ updateTimesDisplay();
 function changeTab(index) {
     const carouselSlides = document.getElementsByClassName("carousel-slide");
     const tabPanes = document.getElementsByClassName("tab-pane");
-
     for (var i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].style.display = "none";
         tabPanes[i].classList.remove("active");
     }
-
     carouselSlides[index].style.display = "block";
     tabPanes[index].classList.add("active");
 }
 
 changeTab(0);
+
+//oculta e mostra main.
+let startTime;
+let interval;
+const line = "Linha aberta: ";
+
+function iniciarLinha() {
+    startTime = Date.now();
+    document.getElementById("main").style.display = "block";
+    document.getElementById("btnIniciar").style.display = "none";
+    interval = setInterval(atualizarTempo, 1000);
+}
+
+function atualizarTempo() {
+    let currentTime = Date.now();
+    let timeElapsed = currentTime - startTime;
+    let formattedTime = formatTime(timeElapsed);
+    document.getElementById("tempo").innerText = line + formattedTime;
+}
+
+function formatTime(time) {
+    let seconds = Math.floor(time / 1000);
+    let minutes = Math.floor(seconds / 60);
+    seconds %= 60;
+    let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+    let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+    return formattedMinutes + ":" + formattedSeconds;
+}
+
+function finalizarLinha() {
+    let resposta = confirm("Deseja realmente encerrar tempo da Linha?");
+    if (resposta) {
+        clearInterval(interval);
+        localStorage.setItem("tempoTotal", startTime);
+        alert("Linha encerrada. O tempo foi salvo.");
+        document.getElementById("tempo").innerText = "00:00";
+        document.getElementById("main").style.display = "none";
+        document.getElementById("btnIniciar").style.display = "block";
+    }
+}
+
