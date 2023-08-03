@@ -282,3 +282,16 @@ footer {
 .footer-content {
     font-size: 14px;
 }
+
+.btn-salvar {
+    background-color: #FFA500;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-salvar:hover {
+    background-color: #FFC66D;
+}
