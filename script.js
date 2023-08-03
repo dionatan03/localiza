@@ -179,7 +179,7 @@ changeTab(0);
 //oculta e mostra main.
 let startTime;
 let interval;
-const line = "Linha aberta: ";
+const line = "Linha em execução: ";
 
 function iniciarLinha() {
     startTime = Date.now();
@@ -205,13 +205,16 @@ function formatTime(time) {
     return formattedMinutes + ":" + formattedSeconds;
 }
 
+function salvarTempo() {
+    localStorage.setItem("tempoTotal", startTime);
+    alert("Tempo salvo com sucesso.");
+}
+
 function finalizarLinha() {
+    clearInterval(interval);
     let resposta = confirm("Deseja realmente encerrar tempo da Linha?");
     if (resposta) {
-        clearInterval(interval);
-        localStorage.setItem("tempoTotal", startTime);
-        alert("Linha encerrada. O tempo foi salvo.");
-        document.getElementById("tempo").innerText = "00:00";
+        document.getElementById("tempo").innerText = "Linha não iniciada: 00:00";
         document.getElementById("main").style.display = "none";
         document.getElementById("btnIniciar").style.display = "block";
     }
