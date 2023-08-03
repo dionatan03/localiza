@@ -17,40 +17,73 @@
     <header>
         <img src="./localiza-logo.png" alt="Localiza Logo" class="logo">
         <h1>Tempos dos Carros</h1>
+        <p id="tempo" style="color: #fffb00;">Linha não iniciada: 00:00</p>
     </header>
+    <div class="main-container">
+        <button id="btnIniciar" onclick="iniciarLinha()">Iniciar linha</button>
+    </div>
+    <div id="main" style="display:none;">
+        <main>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="CACT.png" alt="Carro A">
+                </div>
+                <div class="carousel-slide">
+                    <img src="CORO.png" alt="Carro B">
+                </div>
+                <div class="carousel-slide">
+                    <img src="RENE.png" alt="Carro C">
+                </div>
+                <div class="carousel-slide">
+                    <img src="CROX.png" alt="Carro D">
+                </div>
+            </div>
+            <div class="tab-buttons">
+                <button class="btn-tab" id="car_button_a" data-tab="car_a" onclick="changeTab(0)">Carro A</button>
+                <button class="btn-tab" id="car_button_b" data-tab="car_b" onclick="changeTab(1)">Carro B</button>
+                <button class="btn-tab" id="car_button_c" data-tab="car_c" onclick="changeTab(2)">Carro C</button>
+                <button class="btn-tab" id="car_button_d" data-tab="car_d" onclick="changeTab(3)">Carro D</button>
+            </div>
+            <section class="select-sec">
+                <label for="lavadores">Qts lavadores:</label>
+                <select name="lavadores" id="lavadores">
+                    <option value="1">1 lavador</option>
+                    <option value="2">2 lavadores</option>
+                    <option value="3">3 lavadores</option>
+                    <option value="4">4 lavadores</option>
+                    <option value="5">5 lavadores</option>
+                    <option value="6">6 lavadores</option>
+                </select>
 
-    <main>
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="CACT.png" alt="Carro A">
-            </div>
-            <div class="carousel-slide">
-                <img src="CORO.png" alt="Carro B">
-            </div>
-            <div class="carousel-slide">
-                <img src="RENE.png" alt="Carro C">
-            </div>
-            <div class="carousel-slide">
-                <img src="CROX.png" alt="Carro D">
-            </div>
-        </div>
-        <div class="tab-buttons">
-            <button class="btn-tab" id="car_button_a" data-tab="car_a" onclick="changeTab(0)">Carro A</button>
-            <button class="btn-tab" id="car_button_b" data-tab="car_b" onclick="changeTab(1)">Carro B</button>
-            <button class="btn-tab" id="car_button_c" data-tab="car_c" onclick="changeTab(2)">Carro C</button>
-            <button class="btn-tab" id="car_button_d" data-tab="car_d" onclick="changeTab(3)">Carro D</button>
-        </div>
+                <label for="higienizadores">Qts higienizadores:</label>
+                <select name="higienizadores" id="higienizadores">
+                    <option value="1">1 higienizador</option>
+                    <option value="2">2 higienizadores</option>
+                    <option value="3">3 higienizadores</option>
+                    <option value="4">4 higienizadores</option>
+                    <option value="5">5 higienizadores</option>
+                    <option value="6">6 higienizadores</option>
+                    <option value="7">7 higienizadores</option>
+                    <option value="8">8 higienizadores</option>
+                </select>
 
-        <div class="tab-content">
-            <!-- Carro A -->
-            <section class="tab-pane" id="car_a">
-                <section>
-                    <h2>Registrar Tempo do Carro A:</h2>
-                    <div class="input-group">
-                        <button class="add_button green-button" id="add_button_a">Adicionar</button>
-                        <button class="clear_button red-button" id="clear_button_a">Limpar</button>
-                    </div>
-                </section>
+                <label for="Tipo_de_Lavagem">Tipo de Lavagem:</label>
+                <select name="lavagem" id="lavagem">
+                    <option value="1">A Jato</option>
+                    <option value="2">A Seco</option>
+                </select>
+            </section>
+        </section>
+            <div class="tab-content">
+                <!-- Carro A -->
+                <section class="tab-pane" id="car_a">
+                    <section>
+                        <h2>Registrar Tempo do Carro A:</h2>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_a">Iniciar Tempo</button>
+                            <button class="clear_button red-button" id="clear_button_a">Finalizar Tempo</button>
+                        </div>
+                    </section>
                 <section>
                     <h2>Tempos de Limpeza:</h2>
                     <div class="timer-group">
@@ -85,144 +118,149 @@
                         </div>
                     </div>
                 </section>
-            </section>
+                </section>
 
-            <!-- Carro B -->
-            <section class="tab-pane" id="car_b">
-                <section>
-                    <h2>Registrar Tempo do Carro B:</h2>
-                    <div class="input-group">
-                        <button class="add_button green-button" id="add_button_b">Adicionar</button>
-                        <button class="clear_button red-button" id="clear_button_b">Limpar</button>
-                    </div>
+                <!-- Carro B -->
+                <section class="tab-pane" id="car_b">
+                    <section>
+                        <h2>Registrar Tempo do Carro B:</h2>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_b">Adicionar</button>
+                            <button class="clear_button red-button" id="clear_button_b">Limpar</button>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Tempos de Limpeza:</h2>
+                        <div class="timer-group">
+                            <p>Tempo médio de lavagem:</p>
+                            <div class="timer">
+                                <span class="time-start wash_time" id="wash_time_b">00:00</span>
+                                <button class="start-stop-button wash_button" id="wash_button_b">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para calibrar pneu:</p>
+                            <div class="timer">
+                                <span class="time-start tire_calibration_time" id="tire_calibration_time_b">00:00</span>
+                                <button class="start-stop-button tire_calibration_button"
+                                    id="tire_calibration_button_b">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para higienizar:</p>
+                            <div class="timer">
+                                <span class="time-start interior_cleaning_time"
+                                    id="interior_cleaning_time_b">00:00</span>
+                                <button class="start-stop-button interior_cleaning_button"
+                                    id="interior_cleaning_button_b">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para limpar os vidros:</p>
+                            <div class="timer">
+                                <span class="time-start glass_cleaning_time" id="glass_cleaning_time_b">00:00</span>
+                                <button class="start-stop-button glass_cleaning_button"
+                                    id="glass_cleaning_button_b">Iniciar</button>
+                            </div>
+                        </div>
+                    </section>
                 </section>
-                <section>
-                    <h2>Tempos de Limpeza:</h2>
-                    <div class="timer-group">
-                        <p>Tempo médio de lavagem:</p>
-                        <div class="timer">
-                            <span class="time-start wash_time" id="wash_time_b">00:00</span>
-                            <button class="start-stop-button wash_button" id="wash_button_b">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para calibrar pneu:</p>
-                        <div class="timer">
-                            <span class="time-start tire_calibration_time" id="tire_calibration_time_b">00:00</span>
-                            <button class="start-stop-button tire_calibration_button"
-                                id="tire_calibration_button_b">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para higienizar:</p>
-                        <div class="timer">
-                            <span class="time-start interior_cleaning_time" id="interior_cleaning_time_b">00:00</span>
-                            <button class="start-stop-button interior_cleaning_button"
-                                id="interior_cleaning_button_b">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para limpar os vidros:</p>
-                        <div class="timer">
-                            <span class="time-start glass_cleaning_time" id="glass_cleaning_time_b">00:00</span>
-                            <button class="start-stop-button glass_cleaning_button"
-                                id="glass_cleaning_button_b">Iniciar</button>
-                        </div>
-                    </div>
-                </section>
-            </section>
 
-            <!-- Carro C -->
-            <section class="tab-pane" id="car_c">
-                <section>
-                    <h2>Registrar Tempo do Carro C:</h2>
-                    <div class="input-group">
-                        <button class="add_button green-button" id="add_button_c">Adicionar</button>
-                        <button class="clear_button red-button" id="clear_button_c">Limpar</button>
-                    </div>
+                <!-- Carro C -->
+                <section class="tab-pane" id="car_c">
+                    <section>
+                        <h2>Registrar Tempo do Carro C:</h2>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_c">Adicionar</button>
+                            <button class="clear_button red-button" id="clear_button_c">Limpar</button>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Tempos de Limpeza:</h2>
+                        <div class="timer-group">
+                            <p>Tempo médio de lavagem:</p>
+                            <div class="timer">
+                                <span class="time-start wash_time" id="wash_time_c">00:00</span>
+                                <button class="start-stop-button wash_button" id="wash_button_c">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para calibrar pneu:</p>
+                            <div class="timer">
+                                <span class="time-start tire_calibration_time" id="tire_calibration_time_c">00:00</span>
+                                <button class="start-stop-button tire_calibration_button"
+                                    id="tire_calibration_button_c">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para higienizar:</p>
+                            <div class="timer">
+                                <span class="time-start interior_cleaning_time"
+                                    id="interior_cleaning_time_c">00:00</span>
+                                <button class="start-stop-button interior_cleaning_button"
+                                    id="interior_cleaning_button_c">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para limpar os vidros:</p>
+                            <div class="timer">
+                                <span class="time-start glass_cleaning_time" id="glass_cleaning_time_c">00:00</span>
+                                <button class="start-stop-button glass_cleaning_button"
+                                    id="glass_cleaning_button_c">Iniciar</button>
+                            </div>
+                        </div>
+                    </section>
                 </section>
-                <section>
-                    <h2>Tempos de Limpeza:</h2>
-                    <div class="timer-group">
-                        <p>Tempo médio de lavagem:</p>
-                        <div class="timer">
-                            <span class="time-start wash_time" id="wash_time_c">00:00</span>
-                            <button class="start-stop-button wash_button" id="wash_button_c">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para calibrar pneu:</p>
-                        <div class="timer">
-                            <span class="time-start tire_calibration_time" id="tire_calibration_time_c">00:00</span>
-                            <button class="start-stop-button tire_calibration_button"
-                                id="tire_calibration_button_c">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para higienizar:</p>
-                        <div class="timer">
-                            <span class="time-start interior_cleaning_time" id="interior_cleaning_time_c">00:00</span>
-                            <button class="start-stop-button interior_cleaning_button"
-                                id="interior_cleaning_button_c">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para limpar os vidros:</p>
-                        <div class="timer">
-                            <span class="time-start glass_cleaning_time" id="glass_cleaning_time_c">00:00</span>
-                            <button class="start-stop-button glass_cleaning_button"
-                                id="glass_cleaning_button_c">Iniciar</button>
-                        </div>
-                    </div>
-                </section>
-            </section>
 
-            <!-- Carro D -->
-            <section class="tab-pane" id="car_d">
-                <section>
-                    <h2>Registrar Tempo do Carro D:</h2>
-                    <div class="input-group">
-                        <button class="add_button green-button" id="add_button_d">Adicionar</button>
-                        <button class="clear_button red-button" id="clear_button_d">Limpar</button>
-                    </div>
+                <!-- Carro D -->
+                <section class="tab-pane" id="car_d">
+                    <section>
+                        <h2>Registrar Tempo do Carro D:</h2>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_d">Adicionar</button>
+                            <button class="clear_button red-button" id="clear_button_d">Limpar</button>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Tempos de Limpeza:</h2>
+                        <div class="timer-group">
+                            <p>Tempo médio de lavagem:</p>
+                            <div class="timer">
+                                <span class="time-start wash_time" id="wash_time_d">00:00</span>
+                                <button class="start-stop-button wash_button" id="wash_button_d">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para calibrar pneu:</p>
+                            <div class="timer">
+                                <span class="time-start tire_calibration_time" id="tire_calibration_time_d">00:00</span>
+                                <button class="start-stop-button tire_calibration_button"
+                                    id="tire_calibration_button_d">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para higienizar:</p>
+                            <div class="timer">
+                                <span class="time-start interior_cleaning_time"
+                                    id="interior_cleaning_time_d">00:00</span>
+                                <button class="start-stop-button interior_cleaning_button"
+                                    id="interior_cleaning_button_d">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Tempo para limpar os vidros:</p>
+                            <div class="timer">
+                                <span class="time-start glass_cleaning_time" id="glass_cleaning_time_d">00:00</span>
+                                <button class="start-stop-button glass_cleaning_button"
+                                    id="glass_cleaning_button_d">Iniciar</button>
+                            </div>
+                        </div>
+                    </section>
                 </section>
-                <section>
-                    <h2>Tempos de Limpeza:</h2>
-                    <div class="timer-group">
-                        <p>Tempo médio de lavagem:</p>
-                        <div class="timer">
-                            <span class="time-start wash_time" id="wash_time_d">00:00</span>
-                            <button class="start-stop-button wash_button" id="wash_button_d">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para calibrar pneu:</p>
-                        <div class="timer">
-                            <span class="time-start tire_calibration_time" id="tire_calibration_time_d">00:00</span>
-                            <button class="start-stop-button tire_calibration_button"
-                                id="tire_calibration_button_d">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para higienizar:</p>
-                        <div class="timer">
-                            <span class="time-start interior_cleaning_time" id="interior_cleaning_time_d">00:00</span>
-                            <button class="start-stop-button interior_cleaning_button"
-                                id="interior_cleaning_button_d">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para limpar os vidros:</p>
-                        <div class="timer">
-                            <span class="time-start glass_cleaning_time" id="glass_cleaning_time_d">00:00</span>
-                            <button class="start-stop-button glass_cleaning_button"
-                                id="glass_cleaning_button_d">Iniciar</button>
-                        </div>
-                    </div>
-                </section>
-            </section>
-        </div>
-    </main>
+            </div>
+            <button id="btnFinalizar" onclick="finalizarLinha()">Finalizar Linha</button>
+        </main>
+    </div>
     <footer>
         <div class="footer-content">
             <p>Localiza Aeroporto Florianópolis &copy; 2023</p>
