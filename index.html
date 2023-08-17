@@ -21,6 +21,8 @@
     </header>
     <div class="main-container">
         <button id="btnIniciar" onclick="iniciarLinha()">Iniciar linha</button>
+        <button id="btnDash">Dashboard</button>
+        <p id="p">Dashboard em desenvolvimento!.</p>
     </div>
     <div id="main" style="display:none;">
         <main>
@@ -44,103 +46,115 @@
                 <button class="btn-tab" id="car_button_c" data-tab="car_c" onclick="changeTab(2)">Carro C</button>
                 <button class="btn-tab" id="car_button_d" data-tab="car_d" onclick="changeTab(3)">Carro D</button>
             </div>
-            <section class="select-sec">
-                <h2>Dados Equipe lavação Automotiva</h2>
-                <label for="lavadores">Qts lavadores:</label>
-                <select name="lavadores" id="lavadores">
-                    <option value="1">1 lavador</option>
-                    <option value="2">2 lavadores</option>
-                    <option value="3">3 lavadores</option>
-                    <option value="4">4 lavadores</option>
-                    <option value="5">5 lavadores</option>
-                    <option value="6">6 lavadores</option>
-                </select>
-
-                <label for="higienizadores">Qts higienizadores:</label>
-                <select name="higienizadores" id="higienizadores">
-                    <option value="1">1 higienizador</option>
-                    <option value="2">2 higienizadores</option>
-                    <option value="3">3 higienizadores</option>
-                    <option value="4">4 higienizadores</option>
-                    <option value="5">5 higienizadores</option>
-                    <option value="6">6 higienizadores</option>
-                    <option value="7">7 higienizadores</option>
-                    <option value="8">8 higienizadores</option>
-                </select>
-
-                <label for="Tipo_de_Lavagem">Tipo de Lavagem:</label>
-                <select name="lavagem" id="lavagem">
-                    <option value="1">A Jato</option>
-                    <option value="2">A Seco</option>
-                </select>
-
-                <button class="btn-salvar" onclick="desativarBotao()">Registrar Equipe lavação</button>
             </section>
-        </section>
             <div class="tab-content">
                 <!-- Carro A -->
                 <section class="tab-pane" id="car_a">
-                    <section>
-                        <h2>Registrar Tempo do Carro A:</h2>
-                        <div class="input-group">
-                            <button class="add_button green-button" id="add_button_a">Iniciar Tempo</button>
-                            <button class="clear_button red-button" id="clear_button_a">Finalizar Tempo</button>
-                        </div>
-                    </section>
-                <section>
-                    <h2>Tempos de Limpeza:</h2>
-                    <div class="timer-group">
-                        <p>Tempo médio de lavagem:</p>
-                        <div class="timer">
-                            <span class="time-start wash_time" id="wash_time_a">00:00</span>
-                            <button class="start-stop-button wash_button" id="wash_button_a">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para calibrar pneu:</p>
-                        <div class="timer">
-                            <span class="time-start tire_calibration_time" id="tire_calibration_time_a">00:00</span>
-                            <button class="start-stop-button tire_calibration_button"
-                                id="tire_calibration_button_a">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para higienizar:</p>
-                        <div class="timer">
-                            <span class="time-start interior_cleaning_time" id="interior_cleaning_time_a">00:00</span>
-                            <button class="start-stop-button interior_cleaning_button"
-                                id="interior_cleaning_button_a">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="timer-group">
-                        <p>Tempo para limpar os vidros:</p>
-                        <div class="timer">
-                            <span class="time-start glass_cleaning_time" id="glass_cleaning_time_a">00:00</span>
-                            <button class="start-stop-button glass_cleaning_button"
-                                id="glass_cleaning_button_a">Iniciar</button>
-                        </div>
-                    </div>
-                </section>
-                </section>
-
-                <!-- Carro B -->
-                <section class="tab-pane" id="car_b">
-                    <section>
-                        <h2>Registrar Tempo do Carro B:</h2>
-                        <div class="input-group">
-                            <button class="add_button green-button" id="add_button_b">Adicionar</button>
-                            <button class="clear_button red-button" id="clear_button_b">Limpar</button>
-                        </div>
+                    <h2>Registrar Carro A:</h2>
+                    <section class="select-sec">
+                        <h2>Dados lavação Automotiva</h2>
+                        <label for="higienizadores">Qts higienizadores:</label>
+                        <select style="text-align: center;" name="higienizadores" id="higienizadores">
+                            <option value="1">1 higienizador</option>
+                            <option value="2">2 higienizadores</option>
+                            <option value="3">3 higienizadores</option>
+                            <option value="4">4 higienizadores</option>
+                            <option value="5">5 higienizadores</option>
+                            <option value="6">6 higienizadores</option>
+                            <option value="7">7 higienizadores</option>
+                            <option value="8">8 higienizadores</option>
+                        </select>
+                        <label for="Tipo_de_Lavagem">Tipo de Lavagem:</label>
+                        <select style="text-align: center;" name="lavagem" id="lavagem">
+                            <option value="1">Lavagem a Jato</option>
+                            <option value="2">Lavagem a Seco</option>
+                        </select>
+                        <label for="categoria">Categoria Automotiva:</label>
+                        <select style="text-align: center;" name="Categoria" id="Categoria">
+                            <option value="1">Hatch</option>
+                            <option value="2">Sedan Pequeno</option>
+                            <option value="3">Sedan Grande</option>
+                            <option value="4">SUV médio</option>
+                            <option value="5">SUV Grande</option>
+                            <option value="6">Não listado</option>
+                        </select>
                     </section>
                     <section>
                         <h2>Tempos de Limpeza:</h2>
                         <div class="timer-group">
-                            <p>Tempo médio de lavagem:</p>
+                            <p>Tempo para calibrar pneu:</p>
                             <div class="timer">
-                                <span class="time-start wash_time" id="wash_time_b">00:00</span>
-                                <button class="start-stop-button wash_button" id="wash_button_b">Iniciar</button>
+                                <span class="time-start tire_calibration_time" id="tire_calibration_time_a">00:00</span>
+                                <button class="start-stop-button tire_calibration_button"
+                                    id="tire_calibration_button_a">Iniciar</button>
                             </div>
                         </div>
+                        <div class="timer-group">
+                            <p>Lavação Externa:</p>
+                            <div class="timer">
+                                <span class="time-start interior_cleaning_time"
+                                    id="interior_cleaning_time_a">00:00</span>
+                                <button class="start-stop-button interior_cleaning_button"
+                                    id="interior_cleaning_button_a">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Secagem:</p>
+                            <div class="timer">
+                                <span class="time-start wash_time" id="wash_time_a">00:00</span>
+                                <button class="start-stop-button wash_button" id="wash_button_a">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Higienização Interna:</p>
+                            <div class="timer">
+                                <span class="time-start glass_cleaning_time" id="glass_cleaning_time_a">00:00</span>
+                                <button class="start-stop-button glass_cleaning_button"
+                                    id="glass_cleaning_button_a">Iniciar</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_a">Salvar Dados</button>
+                            <button class="clear_button red-button" id="clear_button_a">Resetar Dados</button>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Carro B -->
+                <section class="tab-pane" id="car_b">
+                    <h2>Registrar Carro B:</h2>
+                    <section class="select-sec">
+                        <h2>Dados lavação Automotiva</h2>
+                        <label for="higienizadores">Qts higienizadores:</label>
+                        <select style="text-align: center;" name="higienizadores" id="higienizadores">
+                            <option value="1">1 higienizador</option>
+                            <option value="2">2 higienizadores</option>
+                            <option value="3">3 higienizadores</option>
+                            <option value="4">4 higienizadores</option>
+                            <option value="5">5 higienizadores</option>
+                            <option value="6">6 higienizadores</option>
+                            <option value="7">7 higienizadores</option>
+                            <option value="8">8 higienizadores</option>
+                        </select>
+                        <label for="Tipo_de_Lavagem">Tipo de Lavagem:</label>
+                        <select style="text-align: center;" name="lavagem" id="lavagem">
+                            <option value="1">Lavagem a Jato</option>
+                            <option value="2">Lavagem a Seco</option>
+                        </select>
+                        <label for="categoria">Categoria Automotiva:</label>
+                        <select style="text-align: center;" name="Categoria" id="Categoria">
+                            <option value="1">Hatch</option>
+                            <option value="2">Sedan Pequeno</option>
+                            <option value="3">Sedan Grande</option>
+                            <option value="4">SUV médio</option>
+                            <option value="5">SUV Grande</option>
+                            <option value="6">Não listado</option>
+                        </select>
+                    </section>
+                    <section>
+                        <h2>Tempos de Limpeza:</h2>
                         <div class="timer-group">
                             <p>Tempo para calibrar pneu:</p>
                             <div class="timer">
@@ -150,7 +164,7 @@
                             </div>
                         </div>
                         <div class="timer-group">
-                            <p>Tempo para higienizar:</p>
+                            <p>Lavação Externa:</p>
                             <div class="timer">
                                 <span class="time-start interior_cleaning_time"
                                     id="interior_cleaning_time_b">00:00</span>
@@ -159,7 +173,14 @@
                             </div>
                         </div>
                         <div class="timer-group">
-                            <p>Tempo para limpar os vidros:</p>
+                            <p>Secagem:</p>
+                            <div class="timer">
+                                <span class="time-start wash_time" id="wash_time_b">00:00</span>
+                                <button class="start-stop-button wash_button" id="wash_button_b">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Higienização Interna:</p>
                             <div class="timer">
                                 <span class="time-start glass_cleaning_time" id="glass_cleaning_time_b">00:00</span>
                                 <button class="start-stop-button glass_cleaning_button"
@@ -167,26 +188,47 @@
                             </div>
                         </div>
                     </section>
+                    <section>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_b">Salvar Dados</button>
+                            <button class="clear_button red-button" id="clear_button_b">Resetar Dados</button>
+                        </div>
+                    </section>
                 </section>
 
                 <!-- Carro C -->
                 <section class="tab-pane" id="car_c">
-                    <section>
-                        <h2>Registrar Tempo do Carro C:</h2>
-                        <div class="input-group">
-                            <button class="add_button green-button" id="add_button_c">Adicionar</button>
-                            <button class="clear_button red-button" id="clear_button_c">Limpar</button>
-                        </div>
+                    <h2>Registrar Carro C:</h2>
+                    <section class="select-sec">
+                        <h2>Dados lavação Automotiva</h2>
+                        <label for="higienizadores">Qts higienizadores:</label>
+                        <select style="text-align: center;" name="higienizadores" id="higienizadores">
+                            <option value="1">1 higienizador</option>
+                            <option value="2">2 higienizadores</option>
+                            <option value="3">3 higienizadores</option>
+                            <option value="4">4 higienizadores</option>
+                            <option value="5">5 higienizadores</option>
+                            <option value="6">6 higienizadores</option>
+                            <option value="7">7 higienizadores</option>
+                            <option value="8">8 higienizadores</option>
+                        </select>
+                        <label for="Tipo_de_Lavagem">Tipo de Lavagem:</label>
+                        <select style="text-align: center;" name="lavagem" id="lavagem">
+                            <option value="1">Lavagem a Jato</option>
+                            <option value="2">Lavagem a Seco</option>
+                        </select>
+                        <label for="categoria">Categoria Automotiva:</label>
+                        <select style="text-align: center;" name="Categoria" id="Categoria">
+                            <option value="1">Hatch</option>
+                            <option value="2">Sedan Pequeno</option>
+                            <option value="3">Sedan Grande</option>
+                            <option value="4">SUV médio</option>
+                            <option value="5">SUV Grande</option>
+                            <option value="6">Não listado</option>
+                        </select>
                     </section>
                     <section>
                         <h2>Tempos de Limpeza:</h2>
-                        <div class="timer-group">
-                            <p>Tempo médio de lavagem:</p>
-                            <div class="timer">
-                                <span class="time-start wash_time" id="wash_time_c">00:00</span>
-                                <button class="start-stop-button wash_button" id="wash_button_c">Iniciar</button>
-                            </div>
-                        </div>
                         <div class="timer-group">
                             <p>Tempo para calibrar pneu:</p>
                             <div class="timer">
@@ -196,7 +238,7 @@
                             </div>
                         </div>
                         <div class="timer-group">
-                            <p>Tempo para higienizar:</p>
+                            <p>Lavação Externa:</p>
                             <div class="timer">
                                 <span class="time-start interior_cleaning_time"
                                     id="interior_cleaning_time_c">00:00</span>
@@ -205,7 +247,14 @@
                             </div>
                         </div>
                         <div class="timer-group">
-                            <p>Tempo para limpar os vidros:</p>
+                            <p>Secagem:</p>
+                            <div class="timer">
+                                <span class="time-start wash_time" id="wash_time_c">00:00</span>
+                                <button class="start-stop-button wash_button" id="wash_button_c">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Higienização Interna:</p>
                             <div class="timer">
                                 <span class="time-start glass_cleaning_time" id="glass_cleaning_time_c">00:00</span>
                                 <button class="start-stop-button glass_cleaning_button"
@@ -213,26 +262,47 @@
                             </div>
                         </div>
                     </section>
+                    <section>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_c">Salvar Dados</button>
+                            <button class="clear_button red-button" id="clear_button_c">Resetar Dados</button>
+                        </div>
+                    </section>
                 </section>
 
                 <!-- Carro D -->
                 <section class="tab-pane" id="car_d">
-                    <section>
-                        <h2>Registrar Tempo do Carro D:</h2>
-                        <div class="input-group">
-                            <button class="add_button green-button" id="add_button_d">Adicionar</button>
-                            <button class="clear_button red-button" id="clear_button_d">Limpar</button>
-                        </div>
+                    <h2>Registrar Carro D:</h2>
+                    <section class="select-sec">
+                        <h2>Dados lavação Automotiva</h2>
+                        <label for="higienizadores">Qts higienizadores:</label>
+                        <select style="text-align: center;" name="higienizadores" id="higienizadores">
+                            <option value="1">1 higienizador</option>
+                            <option value="2">2 higienizadores</option>
+                            <option value="3">3 higienizadores</option>
+                            <option value="4">4 higienizadores</option>
+                            <option value="5">5 higienizadores</option>
+                            <option value="6">6 higienizadores</option>
+                            <option value="7">7 higienizadores</option>
+                            <option value="8">8 higienizadores</option>
+                        </select>
+                        <label for="Tipo_de_Lavagem">Tipo de Lavagem:</label>
+                        <select style="text-align: center;" name="lavagem" id="lavagem">
+                            <option value="1">Lavagem a Jato</option>
+                            <option value="2">Lavagem a Seco</option>
+                        </select>
+                        <label for="categoria">Categoria Automotiva:</label>
+                        <select style="text-align: center;" name="Categoria" id="Categoria">
+                            <option value="1">Hatch</option>
+                            <option value="2">Sedan Pequeno</option>
+                            <option value="3">Sedan Grande</option>
+                            <option value="4">SUV médio</option>
+                            <option value="5">SUV Grande</option>
+                            <option value="6">Não listado</option>
+                        </select>
                     </section>
                     <section>
                         <h2>Tempos de Limpeza:</h2>
-                        <div class="timer-group">
-                            <p>Tempo médio de lavagem:</p>
-                            <div class="timer">
-                                <span class="time-start wash_time" id="wash_time_d">00:00</span>
-                                <button class="start-stop-button wash_button" id="wash_button_d">Iniciar</button>
-                            </div>
-                        </div>
                         <div class="timer-group">
                             <p>Tempo para calibrar pneu:</p>
                             <div class="timer">
@@ -242,7 +312,7 @@
                             </div>
                         </div>
                         <div class="timer-group">
-                            <p>Tempo para higienizar:</p>
+                            <p>Lavação Externa:</p>
                             <div class="timer">
                                 <span class="time-start interior_cleaning_time"
                                     id="interior_cleaning_time_d">00:00</span>
@@ -251,12 +321,25 @@
                             </div>
                         </div>
                         <div class="timer-group">
-                            <p>Tempo para limpar os vidros:</p>
+                            <p>Secagem:</p>
+                            <div class="timer">
+                                <span class="time-start wash_time" id="wash_time_d">00:00</span>
+                                <button class="start-stop-button wash_button" id="wash_button_d">Iniciar</button>
+                            </div>
+                        </div>
+                        <div class="timer-group">
+                            <p>Higienização Interna:</p>
                             <div class="timer">
                                 <span class="time-start glass_cleaning_time" id="glass_cleaning_time_d">00:00</span>
                                 <button class="start-stop-button glass_cleaning_button"
                                     id="glass_cleaning_button_d">Iniciar</button>
                             </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="input-group">
+                            <button class="add_button green-button" id="add_button_d">Salvar Dados</button>
+                            <button class="clear_button red-button" id="clear_button_d">Resetar Dados</button>
                         </div>
                     </section>
                 </section>
