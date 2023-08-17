@@ -23,11 +23,22 @@ select {
 
 #btnIniciar {
     padding: 20px 40px;
-    /* Ajuste o tamanho do botão conforme necessário */
     font-size: 18px;
-    /* Ajuste o tamanho da fonte conforme necessário */
     background-color: #05662B;
     color: #7DDE21;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 200px;
+    width: 200px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.7);
+}
+#btnDash {
+    padding: 20px 40px;
+    margin-top: 30px;
+    font-size: 18px;
+    background-color: #0c9be3;
+    color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 4px;
@@ -139,7 +150,7 @@ h2 {
 }
 
 .red-button {
-    background-color: red;
+    background-color: #e9ac13;
 }
 
 input[type="text"] {
